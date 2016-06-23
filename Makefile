@@ -13,6 +13,7 @@ run: install
 
 clean:
 	rm -rf $(VENV) build dist *.egg-info
+	rm -rf *.pyc *.pyo __pycache__
 
 $(VENV):
 	virtualenv $(VENV)
