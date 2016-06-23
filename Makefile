@@ -1,7 +1,7 @@
 .PHONY  : all clean install run
 
-VENV        = venv
-APP         = ./app.py
+VENV = venv
+APP  = ./app.py
 
 all: install
 
@@ -12,8 +12,8 @@ run: install
 	env FLASK_APP=$(APP) $(VENV)/bin/flask run
 
 clean:
-	rm -rf $(VENV) build dist *.egg-info
-	rm -rf *.pyc *.pyo __pycache__
+	@ rm -rf $(VENV) build dist *.egg-info
+	@ rm -rf *.pyc *.pyo __pycache__
 
 $(VENV):
 	virtualenv $(VENV)
