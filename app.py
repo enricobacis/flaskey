@@ -1,4 +1,4 @@
-from middleware.logger import LoggingMiddleware
+from middleware.headers import HeaderGetter
 from flask import Flask
 
 app = Flask(__name__)
@@ -7,4 +7,4 @@ app = Flask(__name__)
 def index():
     return 'hello, world!'
 
-app.wsgi_app = LoggingMiddleware(app.wsgi_app)
+app.wsgi_app = HeaderGetter(app.wsgi_app)
